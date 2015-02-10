@@ -1,0 +1,2 @@
+# remove the docker images whose REPOSITORY is <none>
+docker images|awk 'NR!=1{if ($1 == "<none>") print  $3}'|xargs docker rmi -f
